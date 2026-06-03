@@ -352,6 +352,9 @@
   }
 
   function init() {
+    if ("scrollRestoration" in history) {
+      history.scrollRestoration = "manual";
+    }
     renderNavbar();
     renderHero();
     renderAbout();
@@ -367,7 +370,9 @@
     renderSchema();
     bindInteractions();
     observeAnimations();
-    syncActiveServiceTab();
+    if (!window.location.hash) {
+      window.scrollTo(0, 0);
+    }
   }
 
   document.addEventListener("DOMContentLoaded", init);
