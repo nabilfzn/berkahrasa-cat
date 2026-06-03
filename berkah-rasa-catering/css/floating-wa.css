@@ -1,0 +1,49 @@
+/* Floating WhatsApp */
+.floating-wa {
+  align-items: center;
+  animation: wa-pulse 2s ease-in-out infinite;
+  background: var(--color-wa-green);
+  border-radius: var(--radius-full);
+  bottom: var(--space-2);
+  box-shadow: var(--shadow-wa);
+  color: var(--color-white);
+  display: flex;
+  height: 56px;
+  justify-content: center;
+  position: fixed;
+  right: var(--space-2);
+  text-decoration: none;
+  transition: background var(--duration-base) var(--ease-out), transform var(--duration-fast) var(--ease-out);
+  width: 56px;
+  z-index: 1000;
+}
+
+.floating-wa:hover {
+  animation: none;
+  background: var(--color-wa-green-dark);
+  transform: scale(1.1);
+}
+
+.floating-wa svg {
+  height: 28px;
+  width: 28px;
+}
+
+@keyframes wa-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@media (min-width: 1024px) {
+  .floating-wa {
+    bottom: var(--space-3);
+    height: 64px;
+    right: var(--space-3);
+    width: 64px;
+  }
+}
